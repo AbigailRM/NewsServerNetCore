@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{55F3078C-3E5B-43AD-B655-1405C89C59C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{55F3078C-3E5B-43AD-B655-1405C89C59C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsManager", "NewsManager\NewsManager.csproj", "{1C2A6452-300C-4CE0-BEF8-C6DFCC7AAF4B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsViewer", "NewsVisualizer\NewsViewer.csproj", "{F688239B-760C-411D-886B-B42EF76DA45E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{92F91FF3-D726-4FA1-9D83-C6D0B23ABB44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{55F3078C-3E5B-43AD-B655-1405C89C59C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55F3078C-3E5B-43AD-B655-1405C89C59C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55F3078C-3E5B-43AD-B655-1405C89C59C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C2A6452-300C-4CE0-BEF8-C6DFCC7AAF4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C2A6452-300C-4CE0-BEF8-C6DFCC7AAF4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C2A6452-300C-4CE0-BEF8-C6DFCC7AAF4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C2A6452-300C-4CE0-BEF8-C6DFCC7AAF4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F688239B-760C-411D-886B-B42EF76DA45E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F688239B-760C-411D-886B-B42EF76DA45E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F688239B-760C-411D-886B-B42EF76DA45E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F688239B-760C-411D-886B-B42EF76DA45E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92F91FF3-D726-4FA1-9D83-C6D0B23ABB44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92F91FF3-D726-4FA1-9D83-C6D0B23ABB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92F91FF3-D726-4FA1-9D83-C6D0B23ABB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92F91FF3-D726-4FA1-9D83-C6D0B23ABB44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
