@@ -1,37 +1,48 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebApplication1</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>NEWS MANAGER</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/product/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="~/lib/favicons/test/stream/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="~/lib/favicons/test/stream/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="~/lib/favicons/test/stream/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="~/lib/favicons/test/stream/manifest.json">
+    <link rel="mask-icon" href="~/lib/favicons/test/stream/favicon.ico">
+    <meta name="theme-color" content="#7952b3">
+
+    <!-- Custom styles for this template -->
+    <link href="~/css/Style.css" rel="stylesheet">
+
+    <script src="https://cdn.tiny.cloud/1/ke5erzn6yeyijonzh541i2jrhab8w3ovz3hecya71iijyjek/tinymce/5/tinymce.min.js" 
+            referrerpolicy="origin"></script>
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApplication1</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Authors" asp-action="Authors">Authors</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+
+
+<body style="background-color: #ffd3d3">
+        <header class="site-header sticky-top py-1">
+            <nav class="container d-flex flex-column flex-md-row justify-content-between">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NEWS MANAGER</a>
+
+                <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="Articles" asp-action="Index">Articles</a>
+                <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="Authors" asp-action="Index">Authors</a>
+                <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="Sources" asp-action="Index">Sources</a>
+                <a class="py-2 d-none d-md-inline-block" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                @*<a class="py-2 d-none d-md-inline-block" href="#">Support</a>
+                <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
+                <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>*@
+            </nav>
+        </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -40,9 +51,15 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - WebApplication1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+            <p class="float-end mb-1">
+                <a href="#">Back to top</a>
+            </p>
+            <div class="container">
+                &copy; 2021 - NEWS MANAGER - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </div>        
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

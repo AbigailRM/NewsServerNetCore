@@ -55,6 +55,15 @@
     {
       "library": "jquery.isotope@3.0.6",
       "destination": "wwwroot/lib/isotope/"
+    },
+    {
+      "library": "tinymce@5.8.2",
+      "destination": "wwwroot/tinymce/"
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "gulp-favicons@3.0.0",
+      "destination": "wwwroot/lib/favicons/"
     }
   ]
 }

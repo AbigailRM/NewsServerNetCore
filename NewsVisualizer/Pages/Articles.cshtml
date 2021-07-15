@@ -1,0 +1,59 @@
+﻿@page
+@model NewsViewer.Pages.ArticlesModel
+
+@{
+    ViewData["Title"] = "Articles";
+}
+
+<div>
+    <br />
+</div>
+
+@foreach (var item in Model.Article)
+{
+
+
+    @*<div class="card" style="width: 18rem;">
+        <img src="@Url.Content(item.Urlimagen)" class="card-img-top" alt="Nothing to show">
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text"></p>
+            <a href="@Url.Content(item.Urlarticle)" class="btn btn-primary">Show More</a>
+        </div>
+    </div>*@
+
+
+    <div class="col-md-3 ">
+
+        <div class="card mt-3">
+            <img src="@Url.Content(item.Urlimagen)"
+                 class="card-img-top"
+                 alt="Nothing to Show." />
+            <div class="card-body">
+                <h5 class="card-title">
+                    @Html.DisplayForModel(item.Title)
+                </h5>
+                <p class="card-text">
+                    @Html.DisplayForModel(item.Description)
+                    <div>
+                        <h5 id="publishedAt">
+                            <br />
+                            Published At: @Html.DisplayForModel(item.PublishedAt)
+                        </h5>
+                <p class="card-subtitle author ">
+                    Author: @Html.DisplayForModel(item.Author.Name) @Html.DisplayForModel(item.Author.Apellido)
+                </p>
+            </div>
+            </p>
+        </div>
+
+        <div class="card-footer">
+            <a href={article.url}
+               target="blank"
+               class="btn btn-outline-primary">
+                Show Entire Article
+            </a>
+        </div>
+    </div>
+    </div>
+}

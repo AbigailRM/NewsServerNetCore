@@ -3,39 +3,78 @@
 @{
     ViewData["Title"] = "Index";
 }
+<br />
+<div>
+    <h1 class="text-dark fst-italic">AUTHORS</h1>
+</div>
 
-<h1>Index</h1>
+@*<button type="button" class="btn btn-primary" asp-action="Create" data-bs-toggle="modal" data-bs-target="#createAuthor" >
+    New Author
+</button>*@
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+
+
+<br/>
+
+<table class="table table-dark table-striped table-hover table-sm">
     <thead>
         <tr>
-            <th>
+            <th class="col-sm-4">
                 @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Apellido)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model)
+        {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Name) @Html.DisplayFor(modelItem => item.Apellido)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Apellido)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.AuthorId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AuthorId">Details</a> |
+                <a asp-action="Edit" asp-route-id="@item.AuthorId">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.AuthorId">Details</a> 
                 <a asp-action="Delete" asp-route-id="@item.AuthorId">Delete</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>
+
+
+<!--<div class="modal fade" id="createAuthor" tabindex="-1" aria-labelledby="authorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="authorModalLabel">Create Author</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Author.Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Apellido" class="control-label"></label>
+                            <input asp-for="Apellido" class="form-control" />
+                            <span asp-validation-for="Apellido" class="text-danger"></span>
+                        </div>-->
+                        @*<div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>*@
+                    <!--</form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>-->

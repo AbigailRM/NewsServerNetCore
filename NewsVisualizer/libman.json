@@ -3,12 +3,22 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
+      "library": "axios@0.21.1",
+      "destination": "wwwroot/lib/axios/"
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "gulp-favicons@3.0.0",
+      "destination": "wwwroot/favicons/"
+    },
+    {
       "library": "twitter-bootstrap@5.0.2",
       "destination": "wwwroot/lib/bootstrap/",
       "files": [
         "js/bootstrap.min.js",
-        "js/bootstrap.bundle.min.js",
-        "css/bootstrap-grid.min.css"
+        "css/bootstrap-grid.min.css",
+        "css/bootstrap.min.css",
+        "js/bootstrap.bundle.min.js"
       ]
     }
   ]

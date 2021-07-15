@@ -4,6 +4,26 @@
     ViewData["Title"] = "Edit";
 }
 
+
+<script>
+    tinymce.init({
+        selector: 'textarea#tinymce',
+        language: 'es',
+        width: 600,
+        height: 300,
+        plugins: [
+            'advlist autolink link image lists charmap print preview hr anchor pagebreak',
+            'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+            'table emoticons template paste help'
+        ],
+        toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
+            'bullist numlist outdent indent | link image | print preview media fullpage | ' +
+            'forecolor backcolor emoticons | help',
+        menubar: 'favs file edit view insert format tools table help',
+        content_css: '~/css/tinymce.css'
+    });
+</script>
+
 <h1>Edit</h1>
 
 <h4>Article</h4>
@@ -30,7 +50,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Content" class="control-label"></label>
-                <input asp-for="Content" class="form-control" />
+                <textarea id="tinymce" asp-for="Content" class="form-control"></textarea>
                 <span asp-validation-for="Content" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -90,5 +110,22 @@
 </div>
 
 @section Scripts {
+
+
+    @*--- CONFIGURACIÓN DEL EDITOR HTML TINY-MCE ---*@
+    <!--<script type="text/javascript" src="~/tinymce/jquery.tinymce.min.js"></script>
+    <script type="text/javascript" src="~/tinymce/tinymce.min.js"></script>
+
+    <script type="text/javascript" src="~/tinymce/plugins/image/plugin.min.js"></script>
+    <script type="text/javascript" src="~/tinymce/plugins/link/plugin.min.js"></script>
+    <script type="text/javascript" src="~/tinymce/plugins/code/plugin.min.js"></script>
+    <script type="text/javascript" src="~/tinymce/plugins/colorpicker/plugin.min.js"></script>
+    <script type="text/javascript" src="~/tinymce/plugins/textcolor/plugin.min.js"></script>
+    <script type="text/javascript" src="~/tinymce/plugins/emoticons/plugin.min.js"></script>
+    <script type="text/javascript" src="~/tinymce/plugins/imagetools/plugin.min.js"></script>
+    <script type="text/javascript" src="~/tinymce/plugins/codesample/plugin.min.js"></script>
+
+    <script type="text/javascript" src="~/tinymce/themes/silver/theme.min.js"></script>-->
+
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

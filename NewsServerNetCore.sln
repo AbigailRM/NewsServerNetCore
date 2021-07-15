@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsManager", "NewsManager\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsViewer", "NewsVisualizer\NewsViewer.csproj", "{F688239B-760C-411D-886B-B42EF76DA45E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{92F91FF3-D726-4FA1-9D83-C6D0B23ABB44}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{F688239B-760C-411D-886B-B42EF76DA45E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F688239B-760C-411D-886B-B42EF76DA45E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F688239B-760C-411D-886B-B42EF76DA45E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92F91FF3-D726-4FA1-9D83-C6D0B23ABB44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92F91FF3-D726-4FA1-9D83-C6D0B23ABB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92F91FF3-D726-4FA1-9D83-C6D0B23ABB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92F91FF3-D726-4FA1-9D83-C6D0B23ABB44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

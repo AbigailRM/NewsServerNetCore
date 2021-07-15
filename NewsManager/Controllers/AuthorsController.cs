@@ -21,8 +21,8 @@ namespace NewsManager.Controllers
         // GET: Authors
         public IActionResult Index()
         {
-            var newsServerContext = _context.Authors;
-            return View(newsServerContext.ToList());
+            var authors = _context.Authors;
+            return View(authors.ToList());
         }
 
         // GET: Authors/Details

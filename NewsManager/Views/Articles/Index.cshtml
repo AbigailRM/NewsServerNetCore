@@ -4,52 +4,31 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<br />
+
+<div>
+    <h1 class="text-dark fst-italic">ARTICLES</h1>
+</div>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+
+
+<table class="table table-dark table-striped table-hover table-sm">
     <thead>
         <tr>
-            <th>
+            <th class="col-3">
                 @Html.DisplayNameFor(model => model.Title)
             </th>
-            <th>
+            <th class="col-3">
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Content)
+            <th class="col-3">
+                URL to Image
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Urlarticle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Urlimagen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PublishedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Uptake)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Author)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Country)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Language)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sort)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Source)
+            <th class="col-3">
+                Published At
             </th>
             <th></th>
         </tr>
@@ -64,41 +43,14 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Urlarticle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Urlimagen)
+                <img src="@Url.Content(item.Urlimagen)" height="260" width="260"/>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PublishedAt)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Uptake)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author.AuthorId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.CategoryId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Country.CountryId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Language.LanguageId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sort.SortId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Source.SourceId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ArticleId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ArticleId">Details</a> |
+                <a asp-action="Edit" asp-route-id="@item.ArticleId">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.ArticleId">Details</a> 
                 <a asp-action="Delete" asp-route-id="@item.ArticleId">Delete</a>
             </td>
         </tr>

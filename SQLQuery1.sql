@@ -40,7 +40,11 @@ create table Categories
 create table SortBy
 (
 	SortID int primary key identity(1,1),
-	Name varchar(200)
+	Name varchar(200),
+	StateID int,
+	constraint FK_SortStateID foreign key (StateID) references States(StateID),
+	UserID int,
+	constraint FK_SortUserID foreign key (UserID) references Users(UserID)
 )
 
 create table Languages
@@ -77,13 +81,13 @@ create table Authors
 )
 
 
-create table Articulos
+create table Articles
 (
 	ArticleID int primary key identity(1,1),
 	Title varchar(255),
 	AuthorID int,
 	constraint FK_AuthorID foreign key (AuthorID) references Authors(AuthorID),
-	Description varchar(255),
+	Description text,
 	Content text,
 	URLArticle varchar(255),
 	URLImagen varchar(255),
@@ -104,9 +108,6 @@ create table Articulos
 	SortID int,
 	constraint FK_ArSortID foreign key (SortID) references SortBy(SortID)
 )
-
---alter table Articulos
---add 
 
 
 
@@ -188,7 +189,7 @@ INSERT INTO dbo.Countries(CountryCode,Name, StateID) VALUES( 'SK', 'Eslovaquia',
 INSERT INTO dbo.Countries(CountryCode,Name, StateID) VALUES( 'SI', 'Eslovenia',1);
 INSERT INTO dbo.Countries(CountryCode,Name, StateID) VALUES( 'ES', 'España',1);
 INSERT INTO dbo.Countries(CountryCode,Name, StateID) VALUES( 'UM', 'Islas ultramarinas de States Unidos',1);
-INSERT INTO dbo.Countries(CountryCode,Name, StateID) VALUES( 'US', 'States Unidos',1);
+INSERT INTO dbo.Countries(CountryCode,Name, StateID) VALUES( 'US', 'Estados Unidos',1);
 INSERT INTO dbo.Countries(CountryCode,Name, StateID) VALUES( 'EE', 'Estonia',1);
 INSERT INTO dbo.Countries(CountryCode,Name, StateID) VALUES( 'ET', 'Etiopía',1);
 INSERT INTO dbo.Countries(CountryCode,Name, StateID) VALUES( 'FO', 'Islas Feroe',1);

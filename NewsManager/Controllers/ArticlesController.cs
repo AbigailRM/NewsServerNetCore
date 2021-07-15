@@ -26,7 +26,6 @@ namespace NewsManager.Controllers
                 .Include(a => a.Category)
                 .Include(a => a.Country)
                 .Include(a => a.Language)
-                .Include(a => a.Sort)
                 .Include(a => a.Source);
             return View(newsServerContext.ToList());
         }
@@ -44,7 +43,6 @@ namespace NewsManager.Controllers
                 .Include(a => a.Category)
                 .Include(a => a.Country)
                 .Include(a => a.Language)
-                .Include(a => a.Sort)
                 .Include(a => a.Source)
                 .FirstOrDefault(m => m.ArticleId == id);
             if (article == null)
@@ -58,19 +56,18 @@ namespace NewsManager.Controllers
         // GET: Articles/Create
         public IActionResult Create()
         {
-            ViewData["AuthorId"] = new SelectList(_context.Authors, "AuthorId", "AuthorId");
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId");
-            ViewData["CountryId"] = new SelectList(_context.Countries, "CountryId", "CountryId");
-            ViewData["LanguageId"] = new SelectList(_context.Languages, "LanguageId", "LanguageId");
-            ViewData["SortId"] = new SelectList(_context.SortBies, "SortId", "SortId");
-            ViewData["SourceId"] = new SelectList(_context.Sources, "SourceId", "SourceId");
+            ViewData["AuthorId"] = new SelectList(_context.Authors, "AuthorId", "Name");
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name");
+            ViewData["CountryId"] = new SelectList(_context.Countries, "CountryId", "Name");
+            ViewData["LanguageId"] = new SelectList(_context.Languages, "LanguageId", "Name");
+            ViewData["SourceId"] = new SelectList(_context.Sources, "SourceId", "NameSource");
             return View();
         }
 
         // POST: Articles/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("ArticleId,Title,AuthorId,Description,Content,Urlarticle,Urlimagen,PublishedAt,Uptake,SourceId,CategoryId,CountryId,LanguageId,SortId")] Article article)
+        public IActionResult Create([Bind("ArticleId,Title,AuthorId,Description,Content,Urlarticle,Urlimagen,PublishedAt,SourceId,CategoryId,CountryId,LanguageId")] Article article)
         {
             if (ModelState.IsValid)
             {
@@ -78,12 +75,11 @@ namespace NewsManager.Controllers
                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorId"] = new SelectList(_context.Authors, "AuthorId", "AuthorId", article.AuthorId);
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", article.CategoryId);
-            ViewData["CountryId"] = new SelectList(_context.Countries, "CountryId", "CountryId", article.CountryId);
-            ViewData["LanguageId"] = new SelectList(_context.Languages, "LanguageId", "LanguageId", article.LanguageId);
-            ViewData["SortId"] = new SelectList(_context.SortBies, "SortId", "SortId", article.SortId);
-            ViewData["SourceId"] = new SelectList(_context.Sources, "SourceId", "SourceId", article.SourceId);
+            ViewData["AuthorId"] = new SelectList(_context.Authors, "AuthorId", "Name", article.AuthorId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", article.CategoryId);
+            ViewData["CountryId"] = new SelectList(_context.Countries, "CountryId", "Name", article.CountryId);
+            ViewData["LanguageId"] = new SelectList(_context.Languages, "LanguageId", "Name", article.LanguageId);
+            ViewData["SourceId"] = new SelectList(_context.Sources, "SourceId", "NameSource", article.SourceId);
             return View(article);
         }
 
@@ -100,19 +96,18 @@ namespace NewsManager.Controllers
             {
                 return NotFound();
             }
-            ViewData["AuthorId"] = new SelectList(_context.Authors, "AuthorId", "AuthorId", article.AuthorId);
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", article.CategoryId);
-            ViewData["CountryId"] = new SelectList(_context.Countries, "CountryId", "CountryId", article.CountryId);
-            ViewData["LanguageId"] = new SelectList(_context.Languages, "LanguageId", "LanguageId", article.LanguageId);
-            ViewData["SortId"] = new SelectList(_context.SortBies, "SortId", "SortId", article.SortId);
-            ViewData["SourceId"] = new SelectList(_context.Sources, "SourceId", "SourceId", article.SourceId);
+            ViewData["AuthorId"] = new SelectList(_context.Authors, "AuthorId", "Name", article.AuthorId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", article.CategoryId);
+            ViewData["CountryId"] = new SelectList(_context.Countries, "CountryId", "Name", article.CountryId);
+            ViewData["LanguageId"] = new SelectList(_context.Languages, "LanguageId", "Name", article.LanguageId);
+            ViewData["SourceId"] = new SelectList(_context.Sources, "SourceId", "NameSource", article.SourceId);
             return View(article);
         }
 
         // POST: Articles/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("ArticleId,Title,AuthorId,Description,Content,Urlarticle,Urlimagen,PublishedAt,Uptake,SourceId,CategoryId,CountryId,LanguageId,SortId")] Article article)
+        public IActionResult Edit(int id, [Bind("ArticleId,Title,AuthorId,Description,Content,Urlarticle,Urlimagen,PublishedAt,SourceId,CategoryId,CountryId,LanguageId")] Article article)
         {
             if (id != article.ArticleId)
             {
@@ -139,12 +134,11 @@ namespace NewsManager.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorId"] = new SelectList(_context.Authors, "AuthorId", "AuthorId", article.AuthorId);
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", article.CategoryId);
-            ViewData["CountryId"] = new SelectList(_context.Countries, "CountryId", "CountryId", article.CountryId);
-            ViewData["LanguageId"] = new SelectList(_context.Languages, "LanguageId", "LanguageId", article.LanguageId);
-            ViewData["SortId"] = new SelectList(_context.SortBies, "SortId", "SortId", article.SortId);
-            ViewData["SourceId"] = new SelectList(_context.Sources, "SourceId", "SourceId", article.SourceId);
+            ViewData["AuthorId"] = new SelectList(_context.Authors, "AuthorId", "Name", article.AuthorId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", article.CategoryId);
+            ViewData["CountryId"] = new SelectList(_context.Countries, "CountryId", "Name", article.CountryId);
+            ViewData["LanguageId"] = new SelectList(_context.Languages, "LanguageId", "CodigoIdioma", article.LanguageId);
+            ViewData["SourceId"] = new SelectList(_context.Sources, "SourceId", "NameSource", article.SourceId);
             return View(article);
         }
 
@@ -161,7 +155,6 @@ namespace NewsManager.Controllers
                 .Include(a => a.Category)
                 .Include(a => a.Country)
                 .Include(a => a.Language)
-                .Include(a => a.Sort)
                 .Include(a => a.Source)
                 .FirstOrDefault(m => m.ArticleId == id);
             if (article == null)

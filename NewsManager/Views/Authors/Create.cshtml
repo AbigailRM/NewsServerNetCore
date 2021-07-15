@@ -4,9 +4,10 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<div>
+    <h1 class="text-dark fst-italic"> NEW AUTHOR</h1>
+</div>
 
-<h4>Author</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -28,6 +29,41 @@
         </form>
     </div>
 </div>
+
+<!--<div class="modal fade" id="createAuthor" tabindex="-1" aria-labelledby="authorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="authorModalLabel">Create Author</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-4">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Apellido" class="control-label"></label>
+                            <input asp-for="Apellido" class="form-control" />
+                            <span asp-validation-for="Apellido" class="text-danger"></span>
+                        </div>-->
+                        @*<div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>*@
+                    <!--</form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>-->
 
 <div>
     <a asp-action="Index">Back to List</a>
