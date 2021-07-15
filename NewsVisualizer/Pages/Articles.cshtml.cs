@@ -20,9 +20,13 @@ namespace NewsViewer.Pages
 
         public IList<Article> Article { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string search = null)
         {
-            Article = await _context.Articles
+            ViewData[nameof(search)] = search;
+
+            if (string.IsNullOrEmpty(search))
+            {
+                Article = await _context.Articles
                 .Include(a => a.Author)
                 .Include(a => a.Category)
                 .Include(a => a.Country)
@@ -31,6 +35,22 @@ namespace NewsViewer.Pages
                 .Include(a => a.Source)
                 .Include(a => a.State)
                 .Include(a => a.User).ToListAsync();
+            }
+            else
+            {
+                Article = await _context.Articles
+                .Include(a => a.Author)
+                .Include(a => a.Category)
+                .Include(a => a.Country)
+                .Include(a => a.Language)
+                .Include(a => a.Sort)
+                .Include(a => a.Source)
+                .Include(a => a.State)
+                .Include(a => a.User)
+                .Where(x => x.Title.Contains(search))
+                .ToListAsync();
+            }
+            
         }
     }
 }

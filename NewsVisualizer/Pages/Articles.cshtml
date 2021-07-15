@@ -8,52 +8,48 @@
 <div>
     <br />
 </div>
-
-@foreach (var item in Model.Article)
-{
-
-
-    @*<div class="card" style="width: 18rem;">
-        <img src="@Url.Content(item.Urlimagen)" class="card-img-top" alt="Nothing to show">
-        <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text"></p>
-            <a href="@Url.Content(item.Urlarticle)" class="btn btn-primary">Show More</a>
-        </div>
-    </div>*@
+<div class="row">
+    @foreach (var item in Model.Article)
+    {
 
 
-    <div class="col-md-3 ">
 
-        <div class="card mt-3">
-            <img src="@Url.Content(item.Urlimagen)"
-                 class="card-img-top"
-                 alt="Nothing to Show." />
-            <div class="card-body">
-                <h5 class="card-title">
-                    @Html.DisplayForModel(item.Title)
-                </h5>
-                <p class="card-text">
-                    @Html.DisplayForModel(item.Description)
-                    <div>
-                        <h5 id="publishedAt">
-                            <br />
-                            Published At: @Html.DisplayForModel(item.PublishedAt)
-                        </h5>
-                <p class="card-subtitle author ">
-                    Author: @Html.DisplayForModel(item.Author.Name) @Html.DisplayForModel(item.Author.Apellido)
+        <div class="col-md-3 ">
+
+            <div class="card mt-3">
+                <img src="@Url.Content(item.Urlimagen)"
+                     class="card-img-top"
+                     alt="Nothing to Show." />
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </h5>
+                    <p class="card-text">
+                        @Html.DisplayFor(modelItem => item.Description)
+                        <div>
+                            <h5>
+                                <br />
+                                Published At: @Html.DisplayFor(modelItem => item.PublishedAt)
+
+                            </h5>
+                    <p class="card-subtitle">
+                        Author: @Html.DisplayFor(modelItem => item.Author.Name) @Html.DisplayFor(modelItem => item.Author.Apellido)
+                    </p>
+                </div>
                 </p>
             </div>
-            </p>
-        </div>
 
-        <div class="card-footer">
-            <a href={article.url}
-               target="blank"
-               class="btn btn-outline-primary">
-                Show Entire Article
-            </a>
+            <div class="card-footer">
+                <a href=@Html.DisplayFor(modelItem => item.Urlarticle)
+                   target="blank"
+                   class="btn btn-outline-primary">
+                    Show Entire Article
+                </a>
+            </div>
         </div>
     </div>
-    </div>
+
+
 }
+    </div>
+

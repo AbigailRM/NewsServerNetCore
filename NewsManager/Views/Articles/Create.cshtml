@@ -33,57 +33,68 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+            <div class="row">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AuthorId" class="control-label">Author</label>
+                    <select asp-for="AuthorId" class="form-control" asp-items="ViewBag.AuthorId"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Content" class="control-label"></label>
+                    <textarea id="tinymce" asp-for="Content" class="form-control"></textarea>
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="AuthorId" class="control-label">Author</label>
-                <select asp-for="AuthorId" class="form-control" asp-items="ViewBag.AuthorId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Content" class="control-label"></label>
-                <textarea id="tinymce" asp-for="Content" class="form-control"></textarea>
-                <span asp-validation-for="Content" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Urlarticle" class="control-label">URL</label>
-                <input asp-for="Urlarticle" class="form-control" />
-                <span asp-validation-for="Urlarticle" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Urlimagen" class="control-label">URL to Principal Image</label>
-                <input asp-for="Urlimagen" class="form-control" />
-                <span asp-validation-for="Urlimagen" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PublishedAt" class="control-label">Published At</label>
-                <input asp-for="PublishedAt" class="form-control" />
-                <span asp-validation-for="PublishedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SourceId" class="control-label"></label>
-                <select asp-for="SourceId" class="form-control" asp-items="ViewBag.SourceId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="CategoryId" class="control-label">Source</label>
-                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="CountryId" class="control-label">Country</label>
-                <select asp-for="CountryId" class="form-control" asp-items="ViewBag.CountryId"></select>
-            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group row">
+                        <label asp-for="Urlarticle" class="control-label">URL</label>
+                        <input asp-for="Urlarticle" class="form-control" />
+                        <span asp-validation-for="Urlarticle" class="text-danger"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Urlimagen" class="control-label">URL to Principal Image</label>
+                        <input asp-for="Urlimagen" class="form-control" />
+                        <span asp-validation-for="Urlimagen" class="text-danger"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="PublishedAt" class="control-label">Published At</label>
+                        <input asp-for="PublishedAt" class="form-control" />
+                        <span asp-validation-for="PublishedAt" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group row">
+                        <label asp-for="SourceId" class="control-label"></label>
+                        <select asp-for="SourceId" class="form-control" asp-items="ViewBag.SourceId"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CategoryId" class="control-label">Source</label>
+                        <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CountryId" class="control-label">Country</label>
+                        <select asp-for="CountryId" class="form-control" asp-items="ViewBag.CountryId"></select>
+                    </div>
+                </div>
+            </div>           
+           
             <div class="form-group">
                 <label asp-for="LanguageId" class="control-label">Language</label>
                 <select asp-for="LanguageId" class="form-control" asp-items="ViewBag.LanguageId"></select>
             </div>
+            <br />
+            <hr />
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
